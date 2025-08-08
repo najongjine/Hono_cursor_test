@@ -1,0 +1,7 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import * as React from 'react';
+import { cn } from '../../utils/cn';
+export const Input = React.forwardRef(({ className, ...props }, ref) => {
+    return (_jsx("input", { ref: ref, className: cn('flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50', className), ...props }));
+});
+Input.displayName = 'Input';
