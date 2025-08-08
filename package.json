@@ -1,5 +1,5 @@
 {
-  "name": "Hono_test1",
+  "name": "Hono_cursor_test",
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
