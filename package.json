@@ -1,27 +1,29 @@
 {
-  "name": "Hono_cursor_test",
+  "name": "plant-disease-detection-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "cross-env NODE_ENV=development tsx watch src/index.ts",
-    "build": "npm run clean && tsc",
-    "start": "npm run build && cross-env NODE_ENV=production node dist/index.js",
-    "startv2": "cross-env NODE_ENV=production tsx src/index.ts"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.17.1",
-    "cross-env": "^10.0.0",
-    "dotenv": "^17.2.1",
-    "hono": "^4.8.9",
-    "pg": "^8.16.3",
-    "reflect-metadata": "^0.2.2",
-    "rimraf": "^6.0.1",
-    "typeorm": "^0.3.25"
+    "build": "pnpm -r run build",
+    "dev": "pnpm --filter @app/web dev",
+    "dev:api": "pnpm --filter @app/api dev",
+    "dev:web": "pnpm --filter @app/web dev",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "@types/node": "^20.19.9",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.7.1",
-    "typescript": "^5.8.3"
+    "@types/node": "^20.14.9",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
